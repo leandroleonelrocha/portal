@@ -18,6 +18,12 @@ class UserRepo extends BaseRepo
             ->first();
     }
 
+     public function searchByEmail($email)
+    {
+        return $this->model
+            ->where('email', $email)
+            ->first();
+    }
 
     public function buscador($search = null , $paginate = 20)
     {

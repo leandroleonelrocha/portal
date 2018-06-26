@@ -7,7 +7,7 @@ Route::group(['prefix' => 'auth'], function() {
         'uses' => 'AuthController@login'
     ]);
 
-    Route::get('check', [
+    Route::post('check', [
         'as' => 'auth.check',
         'uses' => 'AuthController@check'
     ]);

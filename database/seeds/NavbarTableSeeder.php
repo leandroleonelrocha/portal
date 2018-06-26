@@ -37,13 +37,6 @@ class NavbarTableSeeder extends Seeder
                 'direccion' => 'sistemas',
                 'orden' => '4',
                 'habilitado' => '1'
-            ],
-            [
-                'nombre' => 'Webmail',
-                'ruta' => 'http://mail.desarrollosocial.gob.ar',
-                'direccion' => '',
-                'orden' => '5',
-                'habilitado' => '1'
             ]
         ];
 

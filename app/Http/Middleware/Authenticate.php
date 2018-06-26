@@ -38,10 +38,12 @@ class Authenticate
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {
+    {   
+        /*
         $currentUrl = URL::current();
         $urlCookie = (!is_null($currentUrl)) ? $currentUrl : route('dashboard.index');
         $cookie = cookie('url_goto', $urlCookie, 10);
+        */
 
         if ($this->auth->guest()) {
             if ($request->ajax()) {
@@ -50,7 +52,7 @@ class Authenticate
                 return redirect()->guest('auth/login');
             }
         }
-
+        /*
         // Reviso que la sesión en sso esté abierta
         $sessionId = session('sso_session_id', '');
         $this->ssoFunction->checkSession($sessionId);
@@ -87,6 +89,7 @@ class Authenticate
         $this->_saveUserData(Auth::user(), $datosUser);
 
         return $next($request);
+        */
     }
 
     protected function _saveUserData(User $user, $datos)

@@ -18,6 +18,7 @@ class DashboardController extends Controller
 
     public function index()
     {
+
         $data['fecha'] = Carbon::now();
 
         $data['noticias'] = Noticia::orderBy('created_at', 'desc')->get(); #$this->noticiaRepo->allExceptFirst();

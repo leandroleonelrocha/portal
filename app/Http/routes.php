@@ -2,7 +2,7 @@
 
 require (__DIR__ . '/Routes/auth.php');
 
-Route::group(['middleware' => 'auth'], function() {
+//Route::group(['middleware' => 'auth'], function() {
 
     Route::get('', 'DashboardController@index');
 
@@ -32,5 +32,5 @@ Route::group(['middleware' => 'auth'], function() {
 
     });
 
-});
+//});
 

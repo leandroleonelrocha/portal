@@ -5,7 +5,7 @@ use App\Http\Functions\SsoFunction;
 use App\Http\Repositories\UserRepo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Hash;
 class AuthController extends Controller
 {
     protected $userRepo;
@@ -16,15 +16,42 @@ class AuthController extends Controller
     }
 
     public function login()
-    {
+    {   
+        /*
         if (! Auth::check())
             return redirect()->to(env('SSO_MDS_URL') . '/auth/check?redirect=' . route('auth.check'));
         else
             return redirect()->route('dashboard.index');
+        */
+        return view('login');
+        /*
+        $user = $this->userRepo->searchByUsername($request->get('user'));
+        dd($user);
+        Auth::login($user, true);
+        
+        return redirect()->route('dashboard.index');
+        */
+
     }
 
-    public function check(Request $request, SsoFunction $ssoFunction)
-    {
+    public function check(Request $request)
+    {   
+    
+
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+          
+            $user = $this->userRepo->searchByEmail($request->email);
+         
+            // The user is being remembered...
+            //$user = $this->userRepo->searchByUsername($request->email);
+            //dd($user);
+            Auth::login($user, true);
+            return redirect()->route('dashboard.index');
+
+        }
+        
+
+        /*
         if (! $request->has('user') || ! $request->has('token')) abort(403);
 
         // Valido el token
@@ -59,5 +86,6 @@ class AuthController extends Controller
             return redirect()->to($urlAttempt);
         else
             return redirect()->route('dashboard.index');
+        */
     }
 }
