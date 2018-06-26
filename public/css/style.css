@@ -1,0 +1,31 @@
+.resaltado{
+    background-color: #00c0ef;
+    color: white;
+    padding: 0px 4px;
+    border-radius: 2px;
+}
+.cuerpo {
+    padding: 20px 30px
+}
+.cuerpo img {
+    margin: 20px; float: left; max-width: 60%; height: auto !important
+}
+.lateral {
+    padding: 5px;
+}
+.lateral a{
+    width: 100%; margin-bottom: 5px
+}
+.verNoticia{
+    color: #2c3b41;
+}
+.verNoticia:hover{
+    opacity: 0.8;
+    color: #2c3b41;
+}
+.noticiaDashboard{
+    margin-bottom: 2px;
+}
+.noticiaDashboard div img{
+    margin: 20px 5px
+}

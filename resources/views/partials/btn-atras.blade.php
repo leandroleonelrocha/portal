@@ -1,0 +1,1 @@
+<a href="{{ URL::previous() }}"><span class="glyphicon glyphicon-menu-left"></span></a>
