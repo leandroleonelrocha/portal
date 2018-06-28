@@ -88,8 +88,8 @@ class Authenticate
         $datosUser = $datosSSo->result->user;
         $this->_saveUserData(Auth::user(), $datosUser);
 
-        return $next($request);
         */
+        return $next($request);
     }
 
     protected function _saveUserData(User $user, $datos)
