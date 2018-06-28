@@ -209,4 +209,6 @@ class DocumentacionController extends Controller
 
         return view('documentacion.index')->with($data);
     }
+
+
 }

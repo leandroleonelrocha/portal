@@ -55,7 +55,7 @@
                                     <a href="{!! env('SSO_MDS_URL') !!}" class="btn btn-default btn-flat">Mi cuenta</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="https://sso.mds.gob.ar/auth/logout" class="btn btn-default btn-flat">Cerrar sesión</a>
+                                    <a href="{{route('auth.logout')}}" class="btn btn-default btn-flat">Cerrar sesión</a>
                                 </div>
                             </li>
                         </ul>

@@ -12,4 +12,8 @@ Route::group(['prefix' => 'auth'], function() {
         'uses' => 'AuthController@check'
     ]);
 
+    Route::get('logout', [
+        'as' => 'auth.logout',
+        'uses' => 'AuthController@logout'
+    ]);
 });

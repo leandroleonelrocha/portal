@@ -49,7 +49,7 @@ class AuthController extends Controller
             return redirect()->route('dashboard.index');
 
         }
-        
+            return redirect()->route('auth.login');
 
         /*
         if (! $request->has('user') || ! $request->has('token')) abort(403);
@@ -87,5 +87,11 @@ class AuthController extends Controller
         else
             return redirect()->route('dashboard.index');
         */
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('auth.login');
+
     }
 }
